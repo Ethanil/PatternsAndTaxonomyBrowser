@@ -1,14 +1,14 @@
 <template>
   <v-card>
     <v-navigation-drawer permanent>
-      <template #prepend>Choose Action Verb to Filter Patterns</template>
+      <template #prepend><v-card><v-card-text>Choose Action Verb to Filter Patterns</v-card-text></v-card></template>
       <v-list
         selectable
         mandatory
         open-strategy="single"
         v-model:selected="chosenActionverb"
       >
-        <v-list-item :value="-1" active-class="active-item">All</v-list-item>
+        <v-list-item :value="-1">All</v-list-item>
         <template
           v-for="(verbsArray, category) in store.categorizedActionVerbs"
         >
@@ -17,7 +17,7 @@
               <v-list-item v-bind="props" :title="category"></v-list-item>
             </template>
             <template v-for="verbs of verbsArray">
-              <v-list-item :value="verbs.value" active-class="active-item">
+              <v-list-item :value="verbs.value">
                 <template v-for="verb in verbs.title">
                   <span>{{ verb }} </span>
                   <br />
@@ -83,8 +83,3 @@ const scrollToTop = function () {
   window.scrollTo(0, 0);
 };
 </script>
-<style>
-.active-item {
-  background-color: rgb(162, 204, 190);
-}
-</style>

@@ -49,7 +49,7 @@
       </v-card>
     </v-dialog>
     <v-navigation-drawer permanent>
-      <template #prepend>Choose Action Verb to get 3 random patterns</template>
+      <template #prepend><v-card><v-card-text>Choose Action Verb to get 3 random patterns</v-card-text></v-card></template>
       <v-list open-strategy="single">
         <template v-for="(verbsArray, category) in store.categorizedActionVerbs">
           <v-list-group :value="category">
