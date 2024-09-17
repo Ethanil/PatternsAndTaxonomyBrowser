@@ -38,10 +38,10 @@
               <tr v-for="([verbs, value]) in computedActionVerbs">
                 <td>
                   <template v-for="verb in verbs">{{ verb }}<br></template></td>
-                <td :style="(value ? 'background:palegreen;' : '') + ' width: 75px;'" >
+                <td :style="(value ? 'background:green;' : '') + ' width: 75px;'" >
                   <v-icon
                     v-if="value"
-                    icon="mdi-check"
+                    icon="mdi-check-bold"
                     class="action-verb-icon"
                   ></v-icon>
                 </td>
