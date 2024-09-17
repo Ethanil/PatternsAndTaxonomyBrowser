@@ -17,7 +17,7 @@
               <v-list-item v-bind="props" :title="category"></v-list-item>
             </template>
             <template v-for="verbs of verbsArray">
-              <v-list-item :value="verbs.value">
+              <v-list-item class="py-2" :value="verbs.value">
                 <template v-for="verb in verbs.title">
                   <span>{{ verb }} </span>
                   <br />

@@ -57,7 +57,7 @@
               <v-list-item v-bind="props" :title="category"></v-list-item>
             </template>
             <template v-for="verbs of verbsArray">
-              <v-list-item @click="showRandomPatterns(verbs.value)">
+              <v-list-item class="py-2"  @click="showRandomPatterns(verbs.value)">
                 <template v-for="verb in verbs.title">
                   <span>{{ verb }} </span>
                   <br />
