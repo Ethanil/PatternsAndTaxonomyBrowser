@@ -1,6 +1,6 @@
 <template>
   <v-card>
-    <v-navigation-drawer permanent>
+    <v-navigation-drawer v-model="props.drawer" temporary>
       <template #prepend><v-card><v-card-text>Choose Action Verb to Filter Patterns</v-card-text></v-card></template>
       <v-list
         selectable
@@ -45,7 +45,8 @@
       </v-autocomplete>
 
       <v-row>
-        <v-col v-for="pattern in patterns" xl="3" lg="4" md="6" sm="12">
+        <template v-for="pattern in patterns" >
+        <v-col xl="3" lg="4" md="6" cols="12">
           <PatternPreviewCard
             :patternTitle="pattern.title"
             height="100%"
@@ -57,6 +58,7 @@
             "
           ></PatternPreviewCard>
         </v-col>
+      </template>
       </v-row>
     </v-container>
     <PatternBrowser
@@ -74,6 +76,7 @@ import { usePatternsAndActionverbsStore } from "@/stores/patternsAndActionverbs"
 import { Pattern } from "@/types/types";
 const store = usePatternsAndActionverbsStore();
 const chosenActionverb = defineModel("chosenActionverb", { default: [-1] });
+const props = defineProps(["drawer"]);
 watch(()=> chosenActionverb.value, (oldVal, newVal) => {if(oldVal[0] != newVal[0]) scrollToTop();})
 const patterns = computed(() =>
   store.filteredPatterns(chosenActionverb.value[0])

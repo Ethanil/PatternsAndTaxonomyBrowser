@@ -5,7 +5,7 @@
       <template v-for="element in row">
         <template v-if="typeof element != 'string'">
           <template v-if="element.type === 'link'">
-            <v-tooltip width="25%" open-delay="250" content-class="my-tooltip">
+            <v-tooltip min-width="25%" max-width="600px" open-delay="250" content-class="my-tooltip">
               <template #activator="{ props }">
                 <a
                   v-bind="props"

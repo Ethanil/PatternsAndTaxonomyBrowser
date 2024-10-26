@@ -7,24 +7,30 @@
           @click.stop="drawer = !drawer"
         ></v-app-bar-nav-icon>
 
-        <v-toolbar-title>{{ items[selectedNavigationItem].title }}</v-toolbar-title>
-
+        <!-- <v-toolbar-title>{{ items[selectedNavigationItem].title }}</v-toolbar-title> -->
+         <v-btn-toggle
+         color="primary"
+         base-color="primary"
+         mandatory
+         v-model = selectedNavigationItem>
+        <v-btn>Guided</v-btn>
+        <v-btn>Browsing</v-btn>
+         </v-btn-toggle>
         <v-spacer></v-spacer>
-
       </v-app-bar>
 
-      <v-navigation-drawer
+      <!-- <v-navigation-drawer
         v-model="drawer"
         temporary
       >
         <v-tabs
         direction="vertical"
         v-model="selectedNavigationItem"><template v-for="(item, key) in items" :key="key"> <v-tab :value="key">{{item.title}}</v-tab></template></v-tabs>
-      </v-navigation-drawer>
+      </v-navigation-drawer> -->
 
       <v-main>
         <v-card-text>
-          <v-tabs-window v-model="selectedNavigationItem"><component :is="items[selectedNavigationItem].value"></component></v-tabs-window>
+          <v-tabs-window v-model="selectedNavigationItem"><component :is="items[selectedNavigationItem].value" :drawer="drawer"></component></v-tabs-window>
         </v-card-text>
       </v-main>
     </v-layout>
