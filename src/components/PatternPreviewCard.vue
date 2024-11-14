@@ -2,7 +2,7 @@
   <v-lazy transition="fade-transition">
     <!-- The @click is here to have the card have a click animation, even tho it is wrapped by v-lazy -->
     <v-card class="pa-2" elevation="12" density="compact" :min-height="isTooltip? '0px' : '350px'" @click="">
-      <v-card-title>
+      <v-card-title style="white-space: break-spaces;">
         {{ patternTitle }}
       </v-card-title>
       <v-card-subtitle

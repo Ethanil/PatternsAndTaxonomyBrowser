@@ -3,12 +3,12 @@
     <v-container>
       <v-row>
         <v-col>
-          <v-card-title>
+          <v-card-title style="white-space: break-spaces;">
             <h1>
               {{ pattern.title }}
             </h1>
           </v-card-title>
-          <v-card-subtitle>{{ pattern.shortDescription }}</v-card-subtitle>
+          <v-card-subtitle style="white-space: break-spaces;">{{ pattern.shortDescription }}</v-card-subtitle>
           <v-card-text>{{ pattern.longDescription }}</v-card-text>
           <PatternChapter
             title="Examples"
