@@ -132,7 +132,7 @@ import { usePatternsAndActionverbsStore } from "@/stores/patternsAndActionverbs"
 import { Pattern } from '@/types/types';
 const store = usePatternsAndActionverbsStore()
 const props = defineProps(["drawer"]);
-
+const emit = defineEmits(["closeDrawer"]);
 const helpModal = defineModel("helpModal", { default: false });
 defineModel("chosenActionverb", { default: [-1] });
 const showRandomPatterns = function (actionVerb: number) {
@@ -141,7 +141,7 @@ const showRandomPatterns = function (actionVerb: number) {
   for(let i = 0; i < 3; i++){
     patterns.value.push(filteredPatterns.splice(Math.floor(Math.random()*filteredPatterns.length),1)[0]);
   }
-  patterns.value.sort();
+  emit("closeDrawer");
 };
 const patterns = ref<Pattern[]>([])
 const chosenPattern = defineModel("chosenPattern");

@@ -28,6 +28,7 @@
             ><component
               :is="items[selectedNavigationItem].value"
               :drawer="drawer"
+              @close-drawer="drawer=false"
             ></component
           ></v-tabs-window>
         </v-card-text>
