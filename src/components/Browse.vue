@@ -77,9 +77,12 @@ import { Pattern } from "@/types/types";
 const store = usePatternsAndActionverbsStore();
 const chosenActionverb = defineModel("chosenActionverb", { default: [-1] });
 const props = defineProps(["drawer"]);
+const emit = defineEmits(["closeDrawer"]);
 watch(()=> chosenActionverb.value, (oldVal, newVal) => {if(oldVal[0] != newVal[0]) scrollToTop();})
 const patterns = computed(() =>
-  store.filteredPatterns(chosenActionverb.value[0])
+  {
+    emit("closeDrawer");
+    return store.filteredPatterns(chosenActionverb.value[0])}
 );
 const chosenPattern = defineModel<null|Pattern>("chosenPattern");
 const scrollToTop = function () {
