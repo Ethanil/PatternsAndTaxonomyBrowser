@@ -4,6 +4,7 @@
       <v-app-bar color="primary">
         <v-app-bar-nav-icon
           variant="text"
+          :disabled="selectedNavigationItem == 2"
           @click.stop="drawer = !drawer"
         ></v-app-bar-nav-icon>
 
