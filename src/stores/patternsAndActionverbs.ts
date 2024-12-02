@@ -24,7 +24,7 @@ export const usePatternsAndActionverbsStore = defineStore(
     const categorizedActionVerbs = computed(() => {
       if (!patternsXTaxonomy.value || actionVerbs.value.length == 0) return null;
       filteredPatterns(-1)
-      let result = {} as {[key: string]: {title: string[], value: number}[]};
+      let result = {} as {[key: string]: {title: string[], value: number, description: string}[]};
       for (let [index, category] of Object.entries(
         patternsXTaxonomy.value[0].slice(3, -4)
       )) {
@@ -35,6 +35,7 @@ export const usePatternsAndActionverbsStore = defineStore(
         result[curCategory].push({
           title: patternsXTaxonomy.value[1][Number(index) + 3].split("\n"),
           value: Number(index),
+          description: patternsXTaxonomy.value[2][Number(index) + 3]
         });
       }
       return result;

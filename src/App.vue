@@ -15,6 +15,7 @@
         >
           <v-btn>Guided</v-btn>
           <v-btn>Browsing</v-btn>
+          <v-btn style="flex-shrink: 1;"><span style="white-space: break-spaces;">Action Verbs</span></v-btn>
         </v-btn-toggle>
         <v-spacer></v-spacer>
         <v-btn-toggle color="primary" base-color="primary">
@@ -43,6 +44,7 @@ import Browse from "./components/Browse.vue";
 import Guided from "./components/Guided.vue";
 
 import { useTheme } from "vuetify";
+import Verbs from "./components/Verbs.vue";
 
 const theme = useTheme();
 onMounted(() => {
@@ -75,6 +77,10 @@ const items = [
   {
     title: "Browse Patterns",
     value: Browse,
+  },
+  {
+    title: "Action Verbs",
+    value: Verbs,
   },
 ];
 </script>

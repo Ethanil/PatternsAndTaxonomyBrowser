@@ -13,5 +13,6 @@ declare module 'vue' {
     PatternCard: typeof import('./src/components/PatternCard.vue')['default']
     PatternChapter: typeof import('./src/components/PatternChapter.vue')['default']
     PatternPreviewCard: typeof import('./src/components/PatternPreviewCard.vue')['default']
+    Verbs: typeof import('./src/components/Verbs.vue')['default']
   }
 }
